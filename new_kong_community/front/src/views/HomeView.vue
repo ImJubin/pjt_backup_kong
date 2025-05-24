@@ -9,15 +9,14 @@
 <script setup>
 import axios from "axios";
 import { onMounted } from "vue";
-// izmport { getArticles } from "@/stores/articles";
 import { useArticleStore } from "@/stores/articles";
-import ArticleList from "@/components/ArticleList.vue";
 import { RouterLink } from "vue-router";
 import { useRoute } from "vue-router";
+import ArticleList from "@/components/ArticleList.vue";
 
 // const store = getArticles();
 const store = useArticleStore();
-const route = useRoute;
+// const route = useRoute();
 
 onMounted(() => {
   store.getArticles();

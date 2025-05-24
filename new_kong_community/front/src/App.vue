@@ -1,5 +1,13 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
+// import { useRouter } from 'vue-router'
+
+// const router = useRouter()
+
+function goToDetail() {
+  router.push({ name: 'detail', params: { id: 1 } })
+}
+
 </script>
 
 <template>
