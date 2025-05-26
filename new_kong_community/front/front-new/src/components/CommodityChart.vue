@@ -40,6 +40,30 @@ const chartOptions = ref({
   },
 });
 
+const formatDateTime = (iso) => {
+  return new Date(iso).toLocaleString("ko-KR", {
+    dateStyle: "short",
+    timeStyle: "medium",
+  });
+};
+
+const formatDate = (iso) => {
+  const d = new Date(iso);
+  return `${d.getFullYear()}. ${d.getMonth() + 1}. ${d.getDate()}`;
+};
+
+const isDateChanged = (prevIso, currIso) => {
+  return formatDate(prevIso) !== formatDate(currIso);
+};
+
+const isPriceUp = (idx) => {
+  return idx > 0 && props.data[idx].y > props.data[idx - 1].y;
+};
+
+const isPriceDown = (idx) => {
+  return idx > 0 && props.data[idx].y < props.data[idx - 1].y;
+};
+
 // ✅ props.data가 바뀔 때마다 chartData 업데이트
 watch(
   () => props.data,
@@ -65,21 +89,41 @@ watch(
   <div>
     <Line :data="chartData" :options="chartOptions" class="mb-6" />
 
-    <table class="table-auto text-sm mt-4 border rounded shadow w-full">
-      <thead>
-        <tr class="bg-gray-100 text-left">
-          <th class="px-4 py-2 border">시간</th>
-          <th class="px-4 py-2 border">가격</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(item, idx) in data" :key="idx">
-          <td class="px-4 py-1 border">
-            {{ new Date(item.x).toLocaleString("ko-KR") }}
-          </td>
-          <td class="px-4 py-1 border">{{ item.y.toFixed(2) }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="max-h-64 overflow-y-auto border rounded shadow">
+      <table class="w-full text-sm table-auto">
+        <thead class="sticky top-0 bg-white z-10">
+          <tr class="bg-gray-100 text-left">
+            <th class="px-4 py-2 border">🕒 시간</th>
+            <th class="px-4 py-2 border">💰 가격</th>
+          </tr>
+        </thead>
+        <tbody>
+          <template v-for="(item, idx) in data" :key="idx">
+            <!-- 날짜가 바뀌면 구분선 -->
+            <tr v-if="idx > 0 && isDateChanged(data[idx - 1].x, item.x)">
+              <td
+                colspan="2"
+                class="text-xs text-gray-500 text-center bg-gray-50 border-y py-1"
+              >
+                📅 {{ formatDate(item.x) }}
+              </td>
+            </tr>
+
+            <tr>
+              <td class="px-4 py-1 border">{{ formatDateTime(item.x) }}</td>
+              <td
+                class="px-4 py-1 border font-semibold"
+                :class="{
+                  'text-red-500': isPriceUp(idx),
+                  'text-blue-600': isPriceDown(idx),
+                }"
+              >
+                {{ item.y.toFixed(2) }}
+              </td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
