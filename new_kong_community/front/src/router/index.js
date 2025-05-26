@@ -22,16 +22,22 @@ const router = createRouter({
       name: "ArticleUpdateView",
       component: ArticleUpdateView,
     },
-   {
+    {
       path: "/articles/component/",
       name: "ArticleList",
       component: ArticleList,
     },
     {
-  path: '/articles/:id',
-  name: 'ArticleDetailView',
-  component: () => import('@/views/ArticleDetailView.vue'), // 또는 직접 import
-  },
+      path: '/articles/:id',
+      name: 'ArticleDetailView',
+      component: () => import('@/views/ArticleDetailView.vue'), // 또는 직접 import
+    },
+  // router/index.js
+    {
+      path: '/compare',
+      name: 'Compare',
+      component: () => import('@/views/CompareView.vue')
+    },
   ],
 
 }

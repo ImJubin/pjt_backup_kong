@@ -15,6 +15,7 @@ function goToDetail() {
     <div class="wrapper">
       <nav>
         <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/compare">[시세 비교]</RouterLink>
         <br />
       </nav>
     </div>
