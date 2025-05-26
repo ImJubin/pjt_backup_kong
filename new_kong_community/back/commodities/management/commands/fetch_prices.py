@@ -6,9 +6,9 @@ import yfinance as yf
 from datetime import datetime
 
 SYMBOLS = {
-    "Gold": "GC=F",
-    "Silver": "SI=F",
-    "Copper": "HG=F"
+  "Gold": "GLD",
+  "Silver": "SLV",
+  "Copper": "CPER"
 }
 
 class Command(BaseCommand):
@@ -17,20 +17,18 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         for name, symbol in SYMBOLS.items():
             ticker = yf.Ticker(symbol)
-            # data = ticker.history(period="1d", interval="1m")  # 1분 단위
             data = ticker.history(period="5d", interval="1h")
+
             if data.empty:
                 self.stdout.write(self.style.ERROR(f"No data for {symbol}"))
                 continue
 
-            latest = data.iloc[-1]
-            price = latest['Close']
-            timestamp = latest.name.to_pydatetime()
+            for _, row in data.tail(5).iterrows():  # ✅ 최근 5개만 저장
+                CommodityPrice.objects.create(
+                    name=name,
+                    symbol=symbol,
+                    price=row['Close'],
+                    timestamp=row.name.to_pydatetime()
+                )
 
-            CommodityPrice.objects.create(
-                name=name,
-                symbol=symbol,
-                price=price,
-                timestamp=timestamp
-            )
-            self.stdout.write(self.style.SUCCESS(f"{name} price saved: {price} at {timestamp}"))
+            self.stdout.write(self.style.SUCCESS(f"{name} - {len(data)} data rows saved"))
