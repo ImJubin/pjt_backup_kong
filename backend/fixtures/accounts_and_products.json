@@ -1,0 +1,130 @@
+[
+  {
+    "model": "users.account",
+    "pk": 1,
+    "fields": {
+      "user_id": 1,
+      "bank_name": "하나은행",
+      "account_number": "111-222-333333",
+      "account_type": "적금",
+      "current_balance": "1000000.00",
+      "is_main": true,
+      "alias_name": "월급통장",
+      "created_at": "2024-05-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.savingsdetail",
+    "pk": 1,
+    "fields": {
+      "account": 1,
+      "product_name": "매달 적금",
+      "interest_rate": "3.20",
+      "duration_months": 6,
+      "started_at": "2024-01-01",
+      "ends_at": "2024-07-01",
+      "total_round": 6,
+      "goal_amount": "600000.00",
+      "accumulated_delay_days": 0,
+      "delay_status": "정상",
+      "interest_total": "9600.00",
+      "interest_accumulated": "4000.00",
+      "interest_last_updated": "2024-05-24T12:00:00Z"
+    }
+  },
+  {
+    "model": "users.account",
+    "pk": 2,
+    "fields": {
+      "user_id": 1,
+      "bank_name": "국민은행",
+      "account_number": "222-333-444444",
+      "account_type": "적금",
+      "current_balance": "2000000.00",
+      "is_main": false,
+      "alias_name": "여행적금",
+      "created_at": "2024-04-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.savingsdetail",
+    "pk": 2,
+    "fields": {
+      "account": 2,
+      "product_name": "여행가자 적금",
+      "interest_rate": "2.50",
+      "duration_months": 12,
+      "started_at": "2024-01-01",
+      "ends_at": "2025-01-01",
+      "total_round": 12,
+      "goal_amount": "1200000.00",
+      "accumulated_delay_days": 0,
+      "delay_status": "선납",
+      "interest_total": "15000.00",
+      "interest_accumulated": "6000.00",
+      "interest_last_updated": "2024-05-24T12:00:00Z"
+    }
+  },
+  {
+    "model": "users.account",
+    "pk": 3,
+    "fields": {
+      "user_id": 1,
+      "bank_name": "신한은행",
+      "account_number": "333-444-555555",
+      "account_type": "적금",
+      "current_balance": "500000.00",
+      "is_main": false,
+      "alias_name": "비상금",
+      "created_at": "2024-03-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.savingsdetail",
+    "pk": 3,
+    "fields": {
+      "account": 3,
+      "product_name": "비상금 적금",
+      "interest_rate": "2.80",
+      "duration_months": 3,
+      "started_at": "2024-01-01",
+      "ends_at": "2024-04-01",
+      "total_round": 3,
+      "goal_amount": "300000.00",
+      "accumulated_delay_days": 30,
+      "delay_status": "연체",
+      "interest_total": "4200.00",
+      "interest_accumulated": "2000.00",
+      "interest_last_updated": "2024-05-24T12:00:00Z"
+    }
+  },
+  {
+    "model": "users.account",
+    "pk": 4,
+    "fields": {
+      "user_id": 1,
+      "bank_name": "카카오뱅크",
+      "account_number": "444-555-666666",
+      "account_type": "예금",
+      "current_balance": "3000000.00",
+      "is_main": false,
+      "alias_name": "고정예금",
+      "created_at": "2024-02-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.depositdetail",
+    "pk": 1,
+    "fields": {
+      "account": 4,
+      "product_name": "3개월 정기예금",
+      "interest_rate": "3.00",
+      "duration_months": 3,
+      "started_at": "2024-03-01",
+      "ends_at": "2024-06-01",
+      "interest_total": "22500.00",
+      "interest_accumulated": "12000.00",
+      "interest_last_updated": "2024-05-24T12:00:00Z"
+    }
+  }
+]

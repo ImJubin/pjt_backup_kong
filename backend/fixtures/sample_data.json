@@ -1,0 +1,184 @@
+[
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "username": "user1",
+      "email": "user1@example.com",
+      "phone_number": "01044660469",
+      "password": "pbkdf2_sha256$260000$example$examplehashedpassword"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "username": "user2",
+      "email": "user2@example.com",
+      "phone_number": "01048407599",
+      "password": "pbkdf2_sha256$260000$example$examplehashedpassword"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+      "username": "user3",
+      "email": "user3@example.com",
+      "phone_number": "01048517139",
+      "password": "pbkdf2_sha256$260000$example$examplehashedpassword"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+      "username": "user4",
+      "email": "user4@example.com",
+      "phone_number": "01015943013",
+      "password": "pbkdf2_sha256$260000$example$examplehashedpassword"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 5,
+    "fields": {
+      "username": "user5",
+      "email": "user5@example.com",
+      "phone_number": "01011954372",
+      "password": "pbkdf2_sha256$260000$example$examplehashedpassword"
+    }
+  },
+  {
+    "model": "users.account",
+    "pk": 1,
+    "fields": {
+      "user_id": 1,
+      "bank_name": "(주) 이",
+      "account_number": "ODYA24244302568491",
+      "account_type": "savings",
+      "current_balance": 2110895.86,
+      "created_at": "2023-11-14 08:23:19"
+    }
+  },
+  {
+    "model": "users.account",
+    "pk": 2,
+    "fields": {
+      "user_id": 2,
+      "bank_name": "이이구",
+      "account_number": "WFZO31536361725059",
+      "account_type": "deposit",
+      "current_balance": 2415923.29,
+      "created_at": "2024-06-23 20:18:31"
+    }
+  },
+  {
+    "model": "users.account",
+    "pk": 3,
+    "fields": {
+      "user_id": 3,
+      "bank_name": "이전",
+      "account_number": "RETO93069983592274",
+      "account_type": "savings",
+      "current_balance": 4084252.76,
+      "created_at": "2023-12-01 23:51:50"
+    }
+  },
+  {
+    "model": "users.account",
+    "pk": 4,
+    "fields": {
+      "user_id": 4,
+      "bank_name": "(유) 김",
+      "account_number": "DHZK18026597612837",
+      "account_type": "deposit",
+      "current_balance": 3179211.87,
+      "created_at": "2024-01-26 14:37:16"
+    }
+  },
+  {
+    "model": "users.account",
+    "pk": 5,
+    "fields": {
+      "user_id": 5,
+      "bank_name": "(유) 진김배",
+      "account_number": "INBA78718058321233",
+      "account_type": "savings",
+      "current_balance": 3034990.93,
+      "created_at": "2024-11-16 13:37:25"
+    }
+  },
+  {
+    "model": "users.savingsdetail",
+    "pk": 1,
+    "fields": {
+      "account": 1,
+      "product_name": "적금 상품 1",
+      "interest_rate": 2.16,
+      "duration_months": 12,
+      "started_at": "2024-09-12",
+      "ends_at": "2025-09-12",
+      "payment_date": "2024-10-12",
+      "round_number": 1,
+      "total_round": 12,
+      "goal_amount": 5000000
+    }
+  },
+  {
+    "model": "users.savingsdetail",
+    "pk": 3,
+    "fields": {
+      "account": 3,
+      "product_name": "적금 상품 3",
+      "interest_rate": 2.18,
+      "duration_months": 12,
+      "started_at": "2024-08-19",
+      "ends_at": "2025-08-19",
+      "payment_date": "2024-09-18",
+      "round_number": 1,
+      "total_round": 12,
+      "goal_amount": 5000000
+    }
+  },
+  {
+    "model": "users.savingsdetail",
+    "pk": 5,
+    "fields": {
+      "account": 5,
+      "product_name": "적금 상품 5",
+      "interest_rate": 3.45,
+      "duration_months": 12,
+      "started_at": "2025-02-18",
+      "ends_at": "2026-02-18",
+      "payment_date": "2025-03-20",
+      "round_number": 1,
+      "total_round": 12,
+      "goal_amount": 5000000
+    }
+  },
+  {
+    "model": "users.depositdetail",
+    "pk": 2,
+    "fields": {
+      "account": 2,
+      "product_name": "예금 상품 2",
+      "interest_rate": 1.72,
+      "duration_months": 12,
+      "started_at": "2024-06-03",
+      "ends_at": "2025-06-03"
+    }
+  },
+  {
+    "model": "users.depositdetail",
+    "pk": 4,
+    "fields": {
+      "account": 4,
+      "product_name": "예금 상품 4",
+      "interest_rate": 1.87,
+      "duration_months": 12,
+      "started_at": "2024-08-29",
+      "ends_at": "2025-08-29"
+    }
+  }
+]

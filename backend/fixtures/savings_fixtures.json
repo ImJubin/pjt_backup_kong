@@ -1,0 +1,192 @@
+[
+  {
+    "model": "users.account",
+    "pk": 901,
+    "fields": {
+      "user_id": 1,
+      "bank_name": "국민은행",
+      "account_number": "900-1234",
+      "account_type": "적금",
+      "current_balance": "400000.00",
+      "is_main": false,
+      "alias_name": "연체 적금 계좌",
+      "created_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.savingsdetail",
+    "pk": 901,
+    "fields": {
+      "account": 901,
+      "product_name": "연체된 적금 상품",
+      "interest_rate": "3.20",
+      "duration_months": 12,
+      "started_at": "2024-01-01",
+      "ends_at": "2025-01-01",
+      "total_round": 12,
+      "goal_amount": "1200000.00",
+      "accumulated_delay_days": 60,
+      "delay_status": "연체"
+    }
+  },
+  {
+    "model": "users.savingspayment",
+    "pk": 1,
+    "fields": {
+      "savings_detail": 901,
+      "round_number": 1,
+      "paid_at": "2024-02-15",
+      "amount": "100000.00"
+    }
+  },
+  {
+    "model": "users.savingspayment",
+    "pk": 2,
+    "fields": {
+      "savings_detail": 901,
+      "round_number": 2,
+      "paid_at": "2024-04-10",
+      "amount": "100000.00"
+    }
+  },
+  {
+    "model": "users.savingspayment",
+    "pk": 3,
+    "fields": {
+      "savings_detail": 901,
+      "round_number": 3,
+      "paid_at": "2024-05-20",
+      "amount": "100000.00"
+    }
+  },
+  {
+    "model": "users.savingspayment",
+    "pk": 4,
+    "fields": {
+      "savings_detail": 901,
+      "round_number": 4,
+      "paid_at": "2024-07-01",
+      "amount": "100000.00"
+    }
+  },
+  {
+    "model": "users.account",
+    "pk": 902,
+    "fields": {
+      "user_id": 1,
+      "bank_name": "신한은행",
+      "account_number": "900-5678",
+      "account_type": "적금",
+      "current_balance": "600000.00",
+      "is_main": false,
+      "alias_name": "정상 적금 계좌",
+      "created_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.savingsdetail",
+    "pk": 902,
+    "fields": {
+      "account": 902,
+      "product_name": "정상 적금 상품",
+      "interest_rate": "3.00",
+      "duration_months": 12,
+      "started_at": "2024-01-01",
+      "ends_at": "2025-01-01",
+      "total_round": 12,
+      "goal_amount": "1200000.00",
+      "accumulated_delay_days": 0,
+      "delay_status": "정상"
+    }
+  },
+  {
+    "model": "users.savingspayment",
+    "pk": 5,
+    "fields": {
+      "savings_detail": 902,
+      "round_number": 1,
+      "paid_at": "2024-01-01",
+      "amount": "100000.00"
+    }
+  },
+  {
+    "model": "users.savingspayment",
+    "pk": 6,
+    "fields": {
+      "savings_detail": 902,
+      "round_number": 2,
+      "paid_at": "2024-02-01",
+      "amount": "100000.00"
+    }
+  },
+  {
+    "model": "users.savingspayment",
+    "pk": 7,
+    "fields": {
+      "savings_detail": 902,
+      "round_number": 3,
+      "paid_at": "2024-03-01",
+      "amount": "100000.00"
+    }
+  },
+  {
+    "model": "users.account",
+    "pk": 903,
+    "fields": {
+      "user_id": 1,
+      "bank_name": "우리은행",
+      "account_number": "900-8888",
+      "account_type": "적금",
+      "current_balance": "800000.00",
+      "is_main": false,
+      "alias_name": "선납 적금 계좌",
+      "created_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.savingsdetail",
+    "pk": 903,
+    "fields": {
+      "account": 903,
+      "product_name": "선납 적금 상품",
+      "interest_rate": "3.50",
+      "duration_months": 12,
+      "started_at": "2024-01-01",
+      "ends_at": "2025-01-01",
+      "total_round": 12,
+      "goal_amount": "1200000.00",
+      "accumulated_delay_days": -30,
+      "delay_status": "선납"
+    }
+  },
+  {
+    "model": "users.savingspayment",
+    "pk": 8,
+    "fields": {
+      "savings_detail": 903,
+      "round_number": 1,
+      "paid_at": "2023-12-25",
+      "amount": "100000.00"
+    }
+  },
+  {
+    "model": "users.savingspayment",
+    "pk": 9,
+    "fields": {
+      "savings_detail": 903,
+      "round_number": 2,
+      "paid_at": "2024-01-10",
+      "amount": "100000.00"
+    }
+  },
+  {
+    "model": "users.savingspayment",
+    "pk": 10,
+    "fields": {
+      "savings_detail": 903,
+      "round_number": 3,
+      "paid_at": "2024-01-15",
+      "amount": "100000.00"
+    }
+  }
+]

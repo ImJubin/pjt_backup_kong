@@ -1,0 +1,140 @@
+[
+  {
+    "model": "users.account",
+    "pk": 1,
+    "fields": {
+      "user_id": 1,
+      "bank_name": "국민은행",
+      "account_number": "110-1000",
+      "account_type": "예금",
+      "current_balance": 1000000,
+      "is_main": true,
+      "alias_name": "예금계좌1",
+      "created_at": "2024-01-01"
+    }
+  },
+  {
+    "model": "users.depositdetail",
+    "pk": 1,
+    "fields": {
+      "account": 1,
+      "product_name": "정기예금1",
+      "interest_rate": 2.5,
+      "duration_months": 12,
+      "started_at": "2024-01-01",
+      "ends_at": "2025-01-01"
+    }
+  },
+  {
+    "model": "users.account",
+    "pk": 2,
+    "fields": {
+      "user_id": 1,
+      "bank_name": "신한은행",
+      "account_number": "110-1001",
+      "account_type": "예금",
+      "current_balance": 2000000,
+      "is_main": false,
+      "alias_name": "예금계좌2",
+      "created_at": "2024-02-01"
+    }
+  },
+  {
+    "model": "users.depositdetail",
+    "pk": 2,
+    "fields": {
+      "account": 2,
+      "product_name": "정기예금2",
+      "interest_rate": 3.04,
+      "duration_months": 12,
+      "started_at": "2024-02-01",
+      "ends_at": "2025-02-01"
+    }
+  },
+  {
+    "model": "users.account",
+    "pk": 3,
+    "fields": {
+      "user_id": 1,
+      "bank_name": "우리은행",
+      "account_number": "110-1002",
+      "account_type": "예금",
+      "current_balance": 3000000,
+      "is_main": false,
+      "alias_name": "예금계좌3",
+      "created_at": "2024-03-01"
+    }
+  },
+  {
+    "model": "users.depositdetail",
+    "pk": 3,
+    "fields": {
+      "account": 3,
+      "product_name": "정기예금3",
+      "interest_rate": 2.95,
+      "duration_months": 12,
+      "started_at": "2024-03-01",
+      "ends_at": "2025-03-01"
+    }
+  },
+  {
+    "model": "users.account",
+    "pk": 4,
+    "fields": {
+      "user_id": 1,
+      "bank_name": "카카오뱅크",
+      "account_number": "120-2000",
+      "account_type": "적금",
+      "current_balance": 1500000,
+      "is_main": false,
+      "alias_name": "적금계좌1",
+      "created_at": "2024-02-15"
+    }
+  },
+  {
+    "model": "users.savingsdetail",
+    "pk": 4,
+    "fields": {
+      "account": 4,
+      "product_name": "자유적금1",
+      "interest_rate": 2.34,
+      "duration_months": 12,
+      "started_at": "2024-02-15",
+      "ends_at": "2025-01-15",
+      "payment_date": "2024-04-15",
+      "round_number": 3,
+      "total_round": 12,
+      "goal_amount": 6000000
+    }
+  },
+  {
+    "model": "users.account",
+    "pk": 5,
+    "fields": {
+      "user_id": 1,
+      "bank_name": "토스뱅크",
+      "account_number": "120-2001",
+      "account_type": "적금",
+      "current_balance": 1000000,
+      "is_main": false,
+      "alias_name": "적금계좌2",
+      "created_at": "2024-03-15"
+    }
+  },
+  {
+    "model": "users.savingsdetail",
+    "pk": 5,
+    "fields": {
+      "account": 5,
+      "product_name": "자유적금2",
+      "interest_rate": 2.97,
+      "duration_months": 12,
+      "started_at": "2024-03-15",
+      "ends_at": "2025-02-15",
+      "payment_date": "2024-04-15",
+      "round_number": 2,
+      "total_round": 12,
+      "goal_amount": 6000000
+    }
+  }
+]

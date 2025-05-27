@@ -1,1 +1,2 @@
-# pjt_backup_kong
+# kong-yang-s
+(kong + yang) for pjt
